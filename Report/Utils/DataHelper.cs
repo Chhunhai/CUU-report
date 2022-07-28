@@ -424,7 +424,7 @@ namespace Report.Utils
         }
 
         //Populate Branch List To Dropdown List Statement
-        public static void populateBranchDDL(DropDownList ddl, Int32 token)
+        public static void populateBranchDDL(DropDownList ddl, Int32 token, bool isAllBranch = false)
         {
             var branchList = getBranch(token);
             ddl.DataTextField = "branch_name";
@@ -434,6 +434,10 @@ namespace Report.Utils
             if (branchList.Count > 1)
             {
                 ddl.Items.Insert(0, new ListItem("--- Select a Value ---", ""));
+            }
+            if (isAllBranch)
+            {
+                ddl.Items.Insert(1, new ListItem("All Branches", "0"));
             }
         }
 

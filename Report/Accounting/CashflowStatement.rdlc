@@ -649,6 +649,7 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>=iif(Fields!sub_class.Value="Adjustment for non-operating and non-cash item:" or Fields!sub_class.Value="Add:", "Blue", "Black")</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
@@ -656,6 +657,7 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>=iif(Fields!sub_class.Value="Adjustment for non-operating and non-cash item:" or Fields!sub_class.Value="Add:", "Blue", "Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -698,15 +700,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Switch(
-    Fields!sub_class.Value="Net Income", Fields!amt.Value, 
-    Fields!sub_class.Value ="Depreciation of Proferty. Plan and Equipment", Fields!amt.Value,
-	Fields!sub_class.Value ="Cash Generated From Operating Activities", Fields!amt.Value,
-	Fields!sub_class.Value ="Net Cash Flow From Operating Activities", Fields!amt.Value,
-	Fields!sub_class.Value ="Net Cash Provided By Investing Activities", Fields!amt.Value,
-	Fields!sub_class.Value ="Net Cash Increase of Period", Fields!amt.Value,
-	Fields!sub_class.Value ="    Cash Beginning Of Period", Fields!amt.Value,
-	Fields!sub_class.Value ="Cash At End  Of Period", Fields!amt.Value,
-	Fields!sub_class.Value ="Net Cash Provided By Financing Activities", Fields!amt.Value
+    TRIM(Fields!sub_class.Value)="Net Income", Fields!amt.Value, 
+    TRIM(Fields!sub_class.Value)="Depreciation of Proferty. Plan and Equipment", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash Generated From Operating Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Flow From Operating Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Provided By Investing Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Increase of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash Beginning Of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash At End  Of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Provided By Financing Activities", Fields!amt.Value
     )</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
@@ -742,6 +744,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
