@@ -26,6 +26,8 @@ namespace Report.Dataset {
         
         private CollectionSheetDSDataTable tableCollectionSheetDS;
         
+        private CollectionSheetConsolidateDSDataTable tableCollectionSheetConsolidateDS;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace Report.Dataset {
                 if ((ds.Tables["CollectionSheetDS"] != null)) {
                     base.Tables.Add(new CollectionSheetDSDataTable(ds.Tables["CollectionSheetDS"]));
                 }
+                if ((ds.Tables["CollectionSheetConsolidateDS"] != null)) {
+                    base.Tables.Add(new CollectionSheetConsolidateDSDataTable(ds.Tables["CollectionSheetConsolidateDS"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace Report.Dataset {
         public CollectionSheetDSDataTable CollectionSheetDS {
             get {
                 return this.tableCollectionSheetDS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CollectionSheetConsolidateDSDataTable CollectionSheetConsolidateDS {
+            get {
+                return this.tableCollectionSheetConsolidateDS;
             }
         }
         
@@ -155,6 +170,9 @@ namespace Report.Dataset {
                 if ((ds.Tables["CollectionSheetDS"] != null)) {
                     base.Tables.Add(new CollectionSheetDSDataTable(ds.Tables["CollectionSheetDS"]));
                 }
+                if ((ds.Tables["CollectionSheetConsolidateDS"] != null)) {
+                    base.Tables.Add(new CollectionSheetConsolidateDSDataTable(ds.Tables["CollectionSheetConsolidateDS"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace Report.Dataset {
                     this.tableCollectionSheetDS.InitVars();
                 }
             }
+            this.tableCollectionSheetConsolidateDS = ((CollectionSheetConsolidateDSDataTable)(base.Tables["CollectionSheetConsolidateDS"]));
+            if ((initTable == true)) {
+                if ((this.tableCollectionSheetConsolidateDS != null)) {
+                    this.tableCollectionSheetConsolidateDS.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace Report.Dataset {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCollectionSheetDS = new CollectionSheetDSDataTable();
             base.Tables.Add(this.tableCollectionSheetDS);
+            this.tableCollectionSheetConsolidateDS = new CollectionSheetConsolidateDSDataTable();
+            base.Tables.Add(this.tableCollectionSheetConsolidateDS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeCollectionSheetDS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeCollectionSheetConsolidateDS() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace Report.Dataset {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void CollectionSheetDSRowChangeEventHandler(object sender, CollectionSheetDSRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void CollectionSheetConsolidateDSRowChangeEventHandler(object sender, CollectionSheetConsolidateDSRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -661,6 +696,365 @@ namespace Report.Dataset {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "CollectionSheetDSDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CollectionSheetConsolidateDSDataTable : global::System.Data.TypedTableBase<CollectionSheetConsolidateDSRow> {
+            
+            private global::System.Data.DataColumn columnprinc_outstanding;
+            
+            private global::System.Data.DataColumn columninterest_less;
+            
+            private global::System.Data.DataColumn columnprinciple_less;
+            
+            private global::System.Data.DataColumn columnpenalty_less;
+            
+            private global::System.Data.DataColumn columnlob_name;
+            
+            private global::System.Data.DataColumn columnbranch_id;
+            
+            private global::System.Data.DataColumn columnbranch_name;
+            
+            private global::System.Data.DataColumn columnappr;
+            
+            private global::System.Data.DataColumn columnlob_id;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSDataTable() {
+                this.TableName = "CollectionSheetConsolidateDS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CollectionSheetConsolidateDSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected CollectionSheetConsolidateDSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn princ_outstandingColumn {
+                get {
+                    return this.columnprinc_outstanding;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn interest_lessColumn {
+                get {
+                    return this.columninterest_less;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn principle_lessColumn {
+                get {
+                    return this.columnprinciple_less;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn penalty_lessColumn {
+                get {
+                    return this.columnpenalty_less;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn lob_nameColumn {
+                get {
+                    return this.columnlob_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn branch_idColumn {
+                get {
+                    return this.columnbranch_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn branch_nameColumn {
+                get {
+                    return this.columnbranch_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn apprColumn {
+                get {
+                    return this.columnappr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn lob_idColumn {
+                get {
+                    return this.columnlob_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSRow this[int index] {
+                get {
+                    return ((CollectionSheetConsolidateDSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CollectionSheetConsolidateDSRowChangeEventHandler CollectionSheetConsolidateDSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CollectionSheetConsolidateDSRowChangeEventHandler CollectionSheetConsolidateDSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CollectionSheetConsolidateDSRowChangeEventHandler CollectionSheetConsolidateDSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CollectionSheetConsolidateDSRowChangeEventHandler CollectionSheetConsolidateDSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddCollectionSheetConsolidateDSRow(CollectionSheetConsolidateDSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSRow AddCollectionSheetConsolidateDSRow(string princ_outstanding, string interest_less, string principle_less, string penalty_less, string lob_name, string branch_id, string branch_name, string appr, string lob_id) {
+                CollectionSheetConsolidateDSRow rowCollectionSheetConsolidateDSRow = ((CollectionSheetConsolidateDSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        princ_outstanding,
+                        interest_less,
+                        principle_less,
+                        penalty_less,
+                        lob_name,
+                        branch_id,
+                        branch_name,
+                        appr,
+                        lob_id};
+                rowCollectionSheetConsolidateDSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCollectionSheetConsolidateDSRow);
+                return rowCollectionSheetConsolidateDSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CollectionSheetConsolidateDSDataTable cln = ((CollectionSheetConsolidateDSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CollectionSheetConsolidateDSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnprinc_outstanding = base.Columns["princ_outstanding"];
+                this.columninterest_less = base.Columns["interest_less"];
+                this.columnprinciple_less = base.Columns["principle_less"];
+                this.columnpenalty_less = base.Columns["penalty_less"];
+                this.columnlob_name = base.Columns["lob_name"];
+                this.columnbranch_id = base.Columns["branch_id"];
+                this.columnbranch_name = base.Columns["branch_name"];
+                this.columnappr = base.Columns["appr"];
+                this.columnlob_id = base.Columns["lob_id"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnprinc_outstanding = new global::System.Data.DataColumn("princ_outstanding", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprinc_outstanding);
+                this.columninterest_less = new global::System.Data.DataColumn("interest_less", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninterest_less);
+                this.columnprinciple_less = new global::System.Data.DataColumn("principle_less", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprinciple_less);
+                this.columnpenalty_less = new global::System.Data.DataColumn("penalty_less", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpenalty_less);
+                this.columnlob_name = new global::System.Data.DataColumn("lob_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlob_name);
+                this.columnbranch_id = new global::System.Data.DataColumn("branch_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbranch_id);
+                this.columnbranch_name = new global::System.Data.DataColumn("branch_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbranch_name);
+                this.columnappr = new global::System.Data.DataColumn("appr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnappr);
+                this.columnlob_id = new global::System.Data.DataColumn("lob_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlob_id);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSRow NewCollectionSheetConsolidateDSRow() {
+                return ((CollectionSheetConsolidateDSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CollectionSheetConsolidateDSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CollectionSheetConsolidateDSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CollectionSheetConsolidateDSRowChanged != null)) {
+                    this.CollectionSheetConsolidateDSRowChanged(this, new CollectionSheetConsolidateDSRowChangeEvent(((CollectionSheetConsolidateDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CollectionSheetConsolidateDSRowChanging != null)) {
+                    this.CollectionSheetConsolidateDSRowChanging(this, new CollectionSheetConsolidateDSRowChangeEvent(((CollectionSheetConsolidateDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CollectionSheetConsolidateDSRowDeleted != null)) {
+                    this.CollectionSheetConsolidateDSRowDeleted(this, new CollectionSheetConsolidateDSRowChangeEvent(((CollectionSheetConsolidateDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CollectionSheetConsolidateDSRowDeleting != null)) {
+                    this.CollectionSheetConsolidateDSRowDeleting(this, new CollectionSheetConsolidateDSRowChangeEvent(((CollectionSheetConsolidateDSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCollectionSheetConsolidateDSRow(CollectionSheetConsolidateDSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CollectionSheet ds = new CollectionSheet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CollectionSheetConsolidateDSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1109,6 +1503,280 @@ namespace Report.Dataset {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CollectionSheetConsolidateDSRow : global::System.Data.DataRow {
+            
+            private CollectionSheetConsolidateDSDataTable tableCollectionSheetConsolidateDS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CollectionSheetConsolidateDSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCollectionSheetConsolidateDS = ((CollectionSheetConsolidateDSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string princ_outstanding {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.princ_outstandingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'princ_outstanding\' in table \'CollectionSheetConsolidateDS\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.princ_outstandingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string interest_less {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.interest_lessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'interest_less\' in table \'CollectionSheetConsolidateDS\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.interest_lessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string principle_less {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.principle_lessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'principle_less\' in table \'CollectionSheetConsolidateDS\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.principle_lessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string penalty_less {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.penalty_lessColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'penalty_less\' in table \'CollectionSheetConsolidateDS\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.penalty_lessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string lob_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.lob_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lob_name\' in table \'CollectionSheetConsolidateDS\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.lob_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string branch_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.branch_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'branch_id\' in table \'CollectionSheetConsolidateDS\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.branch_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string branch_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.branch_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'branch_name\' in table \'CollectionSheetConsolidateDS\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.branch_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string appr {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.apprColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'appr\' in table \'CollectionSheetConsolidateDS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.apprColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string lob_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSheetConsolidateDS.lob_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lob_id\' in table \'CollectionSheetConsolidateDS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSheetConsolidateDS.lob_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isprinc_outstandingNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.princ_outstandingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setprinc_outstandingNull() {
+                this[this.tableCollectionSheetConsolidateDS.princ_outstandingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isinterest_lessNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.interest_lessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setinterest_lessNull() {
+                this[this.tableCollectionSheetConsolidateDS.interest_lessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isprinciple_lessNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.principle_lessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setprinciple_lessNull() {
+                this[this.tableCollectionSheetConsolidateDS.principle_lessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispenalty_lessNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.penalty_lessColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpenalty_lessNull() {
+                this[this.tableCollectionSheetConsolidateDS.penalty_lessColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Islob_nameNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.lob_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setlob_nameNull() {
+                this[this.tableCollectionSheetConsolidateDS.lob_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbranch_idNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.branch_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbranch_idNull() {
+                this[this.tableCollectionSheetConsolidateDS.branch_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbranch_nameNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.branch_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbranch_nameNull() {
+                this[this.tableCollectionSheetConsolidateDS.branch_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsapprNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.apprColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetapprNull() {
+                this[this.tableCollectionSheetConsolidateDS.apprColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Islob_idNull() {
+                return this.IsNull(this.tableCollectionSheetConsolidateDS.lob_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setlob_idNull() {
+                this[this.tableCollectionSheetConsolidateDS.lob_idColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1128,6 +1796,40 @@ namespace Report.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CollectionSheetDSRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class CollectionSheetConsolidateDSRowChangeEvent : global::System.EventArgs {
+            
+            private CollectionSheetConsolidateDSRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSRowChangeEvent(CollectionSheetConsolidateDSRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CollectionSheetConsolidateDSRow Row {
                 get {
                     return this.eventRow;
                 }
