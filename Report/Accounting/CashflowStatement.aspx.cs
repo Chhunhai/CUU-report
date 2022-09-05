@@ -19,7 +19,7 @@ namespace Report.Accounting
             if (!IsPostBack)
             {
                 DataHelper.checkLoginSession();
-                DataHelper.populateBranchDDL(ddBranchName, DataHelper.getUserId());
+                DataHelper.populateBranchDDLAllowAll(ddBranchName, DataHelper.getUserId());
                 DataHelper.populateCurrencyDDL(ddCurrency);
                 var d = DataHelper.getSystemDate().ToString(format);
                 dtpFromDate.Text = d;

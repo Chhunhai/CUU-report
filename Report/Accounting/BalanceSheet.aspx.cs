@@ -25,7 +25,7 @@ namespace Report.Accounting
                 }
                 else
                 {
-                    DataHelper.populateBranchDDL(ddBranchName, DataHelper.getUserId());
+                    DataHelper.populateBranchDDLAllowAll(ddBranchName, DataHelper.getUserId());
                 }
                 
                 dtpSystemDate.Text = DataHelper.getSystemDate().ToString(format);
