@@ -165,6 +165,7 @@
     <Content Include="Accounting\CashConsolidate.aspx" />
     <Content Include="Accounting\CashEndingBalance.aspx" />
     <Content Include="Accounting\CashflowStatement.aspx" />
+    <Content Include="Accounting\CashManagermentRatio.aspx" />
     <Content Include="Accounting\ChartOfAccount.aspx" />
     <Content Include="Accounting\DailyCashVault.aspx" />
     <Content Include="Accounting\DailyTillCashPawnOperation.aspx" />
@@ -382,6 +383,17 @@
     </None>
     <Content Include="Dataset\CashflowStatement.xss">
       <DependentUpon>CashflowStatement.xsd</DependentUpon>
+    </Content>
+    <Content Include="Dataset\CashManagermentRatio.xsc">
+      <DependentUpon>CashManagermentRatio.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\CashManagermentRatio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CashManagermentRatio.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Dataset\CashManagermentRatio.xss">
+      <DependentUpon>CashManagermentRatio.xsd</DependentUpon>
     </Content>
     <None Include="Dataset\ChartOfAccount.xsd">
       <SubType>Designer</SubType>
@@ -879,6 +891,13 @@
     <Compile Include="Accounting\CashflowStatement.aspx.designer.cs">
       <DependentUpon>CashflowStatement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Accounting\CashManagermentRatio.aspx.cs">
+      <DependentUpon>CashManagermentRatio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounting\CashManagermentRatio.aspx.designer.cs">
+      <DependentUpon>CashManagermentRatio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Accounting\ChartOfAccount.aspx.cs">
       <DependentUpon>ChartOfAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1024,6 +1043,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CashflowStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\CashManagermentRatio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashManagermentRatio.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dataset\ChartOfAccount.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1438,6 +1462,11 @@
     <Content Include="Operation\CollectionSheetConsolidate.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Accounting\CashManagermentRatio.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -35,6 +35,7 @@ namespace Report.Accounting
             }
             
             List<Procedure> parameters = new List<Procedure>();
+            parameters.Add(item: new Procedure() { field_name = "@pBranch", sql_db_type = MySqlDbType.VarChar, value_name = "0" });
             parameters.Add(item: new Procedure() { field_name = "@pSystemDate", sql_db_type = MySqlDbType.VarChar, value_name = dateSearch });
             GenerateReport(db.getProcedureDataTable("PS_CASH_ENDING", parameters), db.getProcedureDataTable("PS_CASH_ENDING_SUMMARY", parameters));
         }
