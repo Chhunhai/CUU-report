@@ -38,6 +38,7 @@ namespace Report.Accounting
 
             var spd = "PS_CASH_COLLECT_ON_DATE";
             List<Procedure> parameters = new List<Procedure>();
+            parameters.Add(item: new Procedure() { field_name = "@pBranch", sql_db_type = MySqlDbType.VarChar, value_name = "0" });
             parameters.Add(item: new Procedure() { field_name = "@pSystemDate", sql_db_type = MySqlDbType.VarChar, value_name = dateSearch });
             DataTable dt = db.getProcedureDataTable(spd, parameters);
             GenerateReport(dt);

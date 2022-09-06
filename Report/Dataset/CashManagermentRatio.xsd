@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CashManagermentRatio" targetNamespace="http://tempuri.org/CashManagermentRatio.xsd" xmlns:mstns="http://tempuri.org/CashManagermentRatio.xsd" xmlns="http://tempuri.org/CashManagermentRatio.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CashManagermentRatio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CashManagermentRatio" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CashManagermentRatio">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CashInBank" msprop:Generator_RowEvHandlerName="CashInBankRowChangeEventHandler" msprop:Generator_RowDeletedName="CashInBankRowDeleted" msprop:Generator_RowDeletingName="CashInBankRowDeleting" msprop:Generator_RowEvArgName="CashInBankRowChangeEvent" msprop:Generator_TablePropName="CashInBank" msprop:Generator_RowChangedName="CashInBankRowChanged" msprop:Generator_UserTableName="CashInBank" msprop:Generator_RowChangingName="CashInBankRowChanging" msprop:Generator_RowClassName="CashInBankRow" msprop:Generator_TableClassName="CashInBankDataTable" msprop:Generator_TableVarName="tableCashInBank">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:string" minOccurs="0" />
+              <xs:element name="gl_name" msprop:Generator_ColumnPropNameInTable="gl_nameColumn" msprop:Generator_ColumnPropNameInRow="gl_name" msprop:Generator_UserColumnName="gl_name" msprop:Generator_ColumnVarNameInTable="columngl_name" type="xs:string" minOccurs="0" />
+              <xs:element name="gl" msprop:Generator_ColumnPropNameInTable="glColumn" msprop:Generator_ColumnPropNameInRow="gl" msprop:Generator_UserColumnName="gl" msprop:Generator_ColumnVarNameInTable="columngl" type="xs:string" minOccurs="0" />
+              <xs:element name="balance" msprop:Generator_ColumnPropNameInTable="balanceColumn" msprop:Generator_ColumnPropNameInRow="balance" msprop:Generator_UserColumnName="balance" msprop:Generator_ColumnVarNameInTable="columnbalance" type="xs:string" minOccurs="0" />
+              <xs:element name="system_date_id" msprop:Generator_ColumnPropNameInTable="system_date_idColumn" msprop:Generator_ColumnPropNameInRow="system_date_id" msprop:Generator_UserColumnName="system_date_id" msprop:Generator_ColumnVarNameInTable="columnsystem_date_id" type="xs:string" minOccurs="0" />
+              <xs:element name="branch_id" msprop:Generator_ColumnPropNameInTable="branch_idColumn" msprop:Generator_ColumnPropNameInRow="branch_id" msprop:Generator_UserColumnName="branch_id" msprop:Generator_ColumnVarNameInTable="columnbranch_id" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CashCollect" msprop:Generator_RowClassName="CashCollectRow" msprop:Generator_RowEvHandlerName="CashCollectRowChangeEventHandler" msprop:Generator_RowDeletedName="CashCollectRowDeleted" msprop:Generator_RowDeletingName="CashCollectRowDeleting" msprop:Generator_RowEvArgName="CashCollectRowChangeEvent" msprop:Generator_TablePropName="CashCollect" msprop:Generator_RowChangedName="CashCollectRowChanged" msprop:Generator_UserTableName="CashCollect" msprop:Generator_RowChangingName="CashCollectRowChanging" msprop:Generator_TableClassName="CashCollectDataTable" msprop:Generator_TableVarName="tableCashCollect">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="branch_code" msprop:Generator_UserColumnName="branch_code" msprop:Generator_ColumnPropNameInTable="branch_codeColumn" msprop:Generator_ColumnPropNameInRow="branch_code" msprop:Generator_ColumnVarNameInTable="columnbranch_code" type="xs:string" minOccurs="0" />
+              <xs:element name="branch_name" msprop:Generator_UserColumnName="branch_name" msprop:Generator_ColumnPropNameInTable="branch_nameColumn" msprop:Generator_ColumnPropNameInRow="branch_name" msprop:Generator_ColumnVarNameInTable="columnbranch_name" type="xs:string" minOccurs="0" />
+              <xs:element name="principle_cash" msprop:Generator_UserColumnName="principle_cash" msprop:Generator_ColumnPropNameInTable="principle_cashColumn" msprop:Generator_ColumnPropNameInRow="principle_cash" msprop:Generator_ColumnVarNameInTable="columnprinciple_cash" type="xs:string" minOccurs="0" />
+              <xs:element name="interest_cash" msprop:Generator_UserColumnName="interest_cash" msprop:Generator_ColumnPropNameInTable="interest_cashColumn" msprop:Generator_ColumnPropNameInRow="interest_cash" msprop:Generator_ColumnVarNameInTable="columninterest_cash" type="xs:string" minOccurs="0" />
+              <xs:element name="principle_bank" msprop:Generator_UserColumnName="principle_bank" msprop:Generator_ColumnPropNameInTable="principle_bankColumn" msprop:Generator_ColumnPropNameInRow="principle_bank" msprop:Generator_ColumnVarNameInTable="columnprinciple_bank" type="xs:string" minOccurs="0" />
+              <xs:element name="interest_bank" msprop:Generator_UserColumnName="interest_bank" msprop:Generator_ColumnPropNameInTable="interest_bankColumn" msprop:Generator_ColumnPropNameInRow="interest_bank" msprop:Generator_ColumnVarNameInTable="columninterest_bank" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CashEnd" msprop:Generator_RowClassName="CashEndRow" msprop:Generator_RowEvHandlerName="CashEndRowChangeEventHandler" msprop:Generator_RowDeletedName="CashEndRowDeleted" msprop:Generator_RowDeletingName="CashEndRowDeleting" msprop:Generator_RowEvArgName="CashEndRowChangeEvent" msprop:Generator_TablePropName="CashEnd" msprop:Generator_RowChangedName="CashEndRowChanged" msprop:Generator_UserTableName="CashEnd" msprop:Generator_RowChangingName="CashEndRowChanging" msprop:Generator_TableClassName="CashEndDataTable" msprop:Generator_TableVarName="tableCashEnd">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:string" minOccurs="0" />
+              <xs:element name="branch_name" msprop:Generator_UserColumnName="branch_name" msprop:Generator_ColumnPropNameInTable="branch_nameColumn" msprop:Generator_ColumnPropNameInRow="branch_name" msprop:Generator_ColumnVarNameInTable="columnbranch_name" type="xs:string" minOccurs="0" />
+              <xs:element name="cash_on_hand" msprop:Generator_UserColumnName="cash_on_hand" msprop:Generator_ColumnPropNameInTable="cash_on_handColumn" msprop:Generator_ColumnPropNameInRow="cash_on_hand" msprop:Generator_ColumnVarNameInTable="columncash_on_hand" type="xs:string" minOccurs="0" />
+              <xs:element name="gl_petty_cash" msprop:Generator_UserColumnName="gl_petty_cash" msprop:Generator_ColumnPropNameInTable="gl_petty_cashColumn" msprop:Generator_ColumnPropNameInRow="gl_petty_cash" msprop:Generator_ColumnVarNameInTable="columngl_petty_cash" type="xs:string" minOccurs="0" />
+              <xs:element name="cash_pawning" msprop:Generator_UserColumnName="cash_pawning" msprop:Generator_ColumnPropNameInTable="cash_pawningColumn" msprop:Generator_ColumnPropNameInRow="cash_pawning" msprop:Generator_ColumnVarNameInTable="columncash_pawning" type="xs:string" minOccurs="0" />
+              <xs:element name="petty_cash" msprop:Generator_UserColumnName="petty_cash" msprop:Generator_ColumnPropNameInTable="petty_cashColumn" msprop:Generator_ColumnPropNameInRow="petty_cash" msprop:Generator_ColumnVarNameInTable="columnpetty_cash" type="xs:string" minOccurs="0" />
+              <xs:element name="cash_in_bank" msprop:Generator_UserColumnName="cash_in_bank" msprop:Generator_ColumnPropNameInTable="cash_in_bankColumn" msprop:Generator_ColumnPropNameInRow="cash_in_bank" msprop:Generator_ColumnVarNameInTable="columncash_in_bank" type="xs:string" minOccurs="0" />
+              <xs:element name="agency_cash" msprop:Generator_UserColumnName="agency_cash" msprop:Generator_ColumnPropNameInTable="agency_cashColumn" msprop:Generator_ColumnPropNameInRow="agency_cash" msprop:Generator_ColumnVarNameInTable="columnagency_cash" type="xs:string" minOccurs="0" />
+              <xs:element name="agency_bank" msprop:Generator_UserColumnName="agency_bank" msprop:Generator_ColumnPropNameInTable="agency_bankColumn" msprop:Generator_ColumnPropNameInRow="agency_bank" msprop:Generator_ColumnVarNameInTable="columnagency_bank" type="xs:string" minOccurs="0" />
+              <xs:element name="cash_last_day" msprop:Generator_UserColumnName="cash_last_day" msprop:Generator_ColumnPropNameInTable="cash_last_dayColumn" msprop:Generator_ColumnPropNameInRow="cash_last_day" msprop:Generator_ColumnVarNameInTable="columncash_last_day" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
