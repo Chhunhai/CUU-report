@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using LMSReport.Utils;
 using Report.Utils;
 
 namespace Report
@@ -20,9 +19,13 @@ namespace Report
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var pEncrypt = AESUtil.EncryptString(txtPassword.Text);
-         
-            var user = DataHelper.login(txtUsername.Text, "AQUpvTCF66ztPrYRtLm9ew==");
+            //var cls = new ClsCrypto();
+            //var pEncrypt = cls.Encrypt(txtPassword.Text);
+            //var ts = new AES();
+            var pEncrypt = AES.EncryptAndEncode(txtPassword.Text);
+
+            var user = DataHelper.login(txtUsername.Text, pEncrypt);  //"AQUpvTCF66ztPrYRtLm9ew=="
+
             if (user.id != 0)
             {
                 HttpContext.Current.Session["userID"] = user.id;

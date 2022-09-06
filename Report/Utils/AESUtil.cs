@@ -7,8 +7,8 @@ namespace LMSReport.Utils
 {
     public class AESUtil
     {
-        private static string KeyString = "aesEncryptionKey";
-        private static string IVString = "encryptionIntVec";
+        private static string KeyString = "c113bc8b3d03e1135309df7567d351dd";
+        private static string IVString = "9c0534f194d6e5892d1c6768d11070eb";
 
         public static string EncryptString(string message)
         {
@@ -26,7 +26,7 @@ namespace LMSReport.Utils
             {
                 MemoryStream ms = new MemoryStream();
 
-                using (CryptoStream cs = new CryptoStream(ms, rj.CreateEncryptor(Key, IV), CryptoStreamMode.Write))
+                using (CryptoStream cs = new CryptoStream(ms, rj.CreateEncryptor(rj.Key, rj.IV), CryptoStreamMode.Write))
                 {
                     using (StreamWriter sw = new StreamWriter(cs))
                     {

@@ -11,77 +11,64 @@ namespace Report.Accounting
     public partial class AccrualInterestOnPawn : System.Web.UI.Page
     {
         private DBConnect db = new DBConnect();
-        public static string systemDateStr;
-        public static string maxDateStr;
+        DateTime currentDate = DateTime.Today;
         public string format = "dd/MM/yyyy";
+        public string fromDate, toDate;
+        public string dateFromError = "", dateToError = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataHelper.checkLoginSession();
-            //Convert System Date Block
-            systemDateStr = DataHelper.getSystemDateStr();
-
-            //Adding Text and Value to Branch DropdownList block
             if (!IsPostBack)
             {
+                DataHelper.checkLoginSession();
                 DataHelper.populateBranchDDL(ddBranchName, DataHelper.getUserId());
-                dtpSystemDate.Text = systemDateStr;
+                var d = DataHelper.getSystemDate().ToString(format);
+                dtpFromDate.Text = d;
+                dtpToDate.Text = d;
             }
-            
-        }
-
-        //GenerateReport Function
-        private void GenerateReport(DataTable airPSDT)
-        {
-            //Generate Report Block
-            ReportParameterCollection reportParameters = new ReportParameterCollection();
-            reportParameters.Add(new ReportParameter("BranchParameter", ddBranchName.SelectedItem.Text));
-            reportParameters.Add(new ReportParameter("OfficerParameter", ddOfficer.SelectedItem.Text));
-            reportParameters.Add(new ReportParameter("SystemDateParameter", DateTime.ParseExact(dtpSystemDate.Text, format, null).ToString("dd-MMM-yyyy")));
-
-            var _accrualInterest = new ReportDataSource("PawnDetailDS", airPSDT);
-            DataHelper.generateAccountingReport(ReportViewer1, "AccrualInterestOnPawn", reportParameters, _accrualInterest);
         }
 
         protected void btnView_Click(object sender, EventArgs e)
         {
-            //Split System Date Time variable
-            var systemDateSql = DateTime.ParseExact(dtpSystemDate.Text, format, null);
-            maxDateStr = db.GetMaxDate(dtpSystemDate.Text, ddBranchName.SelectedItem.Value);
-
-            var officerStr = ddOfficer.SelectedItem.Value;
-            if(officerStr != "null")
+            try
             {
-                officerStr = ddOfficer.SelectedItem.Value;
+                fromDate = DateTime.ParseExact(dtpFromDate.Text.Trim(), format, null).ToString("yyyy-MM-dd");
             }
-            else
+            catch (Exception)
             {
-                officerStr = null;
+                dateFromError = "* Date wrong format";
+                return;
+            }
+            try
+            {
+                toDate = DateTime.ParseExact(dtpToDate.Text.Trim(), format, null).ToString("yyyy-MM-dd");
+            }
+            catch (Exception)
+            {
+                dateToError = "* Date wrong format";
+                return;
             }
 
-            var airProcedure = "PS_AIR";
-            List<Procedure> procedureList = new List<Procedure>();
-            procedureList.Add(item: new Procedure() { field_name = "@pBranch", sql_db_type = MySqlDbType.VarChar, value_name = ddBranchName.SelectedItem.Value });
-            procedureList.Add(item: new Procedure() { field_name = "@pSystem_Date", sql_db_type = MySqlDbType.Date, value_name = DateTime.ParseExact(dtpSystemDate.Text, format, null).ToString("yyyy-MM-dd") });
-            procedureList.Add(item: new Procedure() { field_name = "@pMax_Date", sql_db_type = MySqlDbType.VarChar, value_name = DateTime.ParseExact(maxDateStr, format, null).ToString("yyyy-MM-dd") });
-            procedureList.Add(item: new Procedure() { field_name = "@pOffice", sql_db_type = MySqlDbType.VarChar, value_name = officerStr });
+            var spd = "PS_AIR_ON_PAWN";
+            List<Procedure> parameters = new List<Procedure>();
+            parameters.Add(item: new Procedure() { field_name = "@pBranch", sql_db_type = MySqlDbType.VarChar, value_name = ddBranchName.SelectedItem.Value });
+            parameters.Add(item: new Procedure() { field_name = "@pFromDate", sql_db_type = MySqlDbType.Date, value_name = fromDate });
+            parameters.Add(item: new Procedure() { field_name = "@pToDate", sql_db_type = MySqlDbType.Date, value_name = toDate });
 
-            DataTable airPSDT = db.getProcedureDataTable(airProcedure, procedureList);
-            GenerateReport(airPSDT);
+            DataTable dt = db.getProcedureDataTable(spd, parameters);
+            GenerateReport(dt);
         }
-
-        protected void ddBranchName_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void GenerateReport(DataTable cashFlowStatementDT)
         {
-            if(ddBranchName.SelectedValue != "")
-            {
-                ddOfficer.Enabled = true;
-                DataHelper.populateOfficerDDL(ddOfficer, Convert.ToInt32(ddBranchName.SelectedValue));
-            }
-            else
-            {
-                ddOfficer.Enabled = false;
-                ddOfficer.SelectedItem.Text = "";
-            }
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Branch", ddBranchName.SelectedItem.Text));
+            reportParameters.Add(new ReportParameter("FromDate", DateTime.ParseExact(dtpFromDate.Text, format, null).ToString("dd-MMM-yyyy")));
+            reportParameters.Add(new ReportParameter("ToDate", DateTime.ParseExact(dtpToDate.Text, format, null).ToString("dd-MMM-yyyy")));
+
+            var ds = new ReportDataSource("AIR_DS", cashFlowStatementDT);
+            DataHelper.generateAccountingReport(ReportViewer1, "AccrualInterestOnPawn", reportParameters, ds);
         }
+
     }
 }

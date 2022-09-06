@@ -2,16 +2,12 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DSource">
-      <DataSourceReference>PS1</DataSourceReference>
-      <rd:DataSourceID>170b3e4a-b098-4ca0-842b-423302711a2d</rd:DataSourceID>
-    </DataSource>
     <DataSource Name="CashflowStatement">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>0ccbe84d-1db7-497b-ac4c-ba90476905b9</rd:DataSourceID>
+      <rd:DataSourceID>7be772ee-0592-474a-aba5-ad85922b0f48</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -48,7 +44,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>CashflowStatement</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Heng\Documents\C#_Projects\Report\Report\Dataset\CashflowStatement.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Soriya\MyData\PS\pawn-shop-report\Report\Dataset\CashflowStatement.xsd</rd:SchemaPath>
         <rd:TableName>CashFlowDS</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -69,6 +65,7 @@
                   <TextRun>
                     <Value>Print Date:</Value>
                     <Style>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -80,7 +77,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.33555in</Top>
+            <Top>1.83555in</Top>
             <Left>9.32624in</Left>
             <Height>0.25in</Height>
             <Width>0.72099in</Width>
@@ -105,7 +102,8 @@
                     <Value>=Microsoft.VisualBasic.Strings.Format(NOW, "dd-MMM-yyyy")</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -114,7 +112,7 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>1.33555in</Top>
+            <Top>1.83555in</Top>
             <Left>10.06173in</Left>
             <Height>0.25in</Height>
             <Width>1.19792in</Width>
@@ -140,6 +138,7 @@
                   <TextRun>
                     <Value>CASHFLOW STATEMENT</Value>
                     <Style>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <Color>Red</Color>
@@ -152,50 +151,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.04388in</Top>
+            <Top>1.51611in</Top>
             <Left>0.17587in</Left>
-            <Height>0.25in</Height>
+            <Height>0.27777in</Height>
             <Width>11.08378in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>IG TECH GROUP CO., LTD</Value>
-                    <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.12499in</Top>
-            <Left>0.17587in</Left>
-            <Height>0.25in</Height>
-            <Width>2.12153in</Width>
-            <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -211,6 +175,7 @@
                   <TextRun>
                     <Value>BRANCH:</Value>
                     <Style>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -219,11 +184,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.4375in</Top>
+            <Top>0.5625in</Top>
             <Left>0.17587in</Left>
             <Height>0.25in</Height>
             <Width>0.89584in</Width>
-            <ZIndex>4</ZIndex>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -244,7 +209,7 @@
                   <TextRun>
                     <Value>FROM DATE:</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -253,11 +218,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.72444in</Top>
-            <Left>0.17587in</Left>
+            <Top>0.5625in</Top>
+            <Left>3.78698in</Left>
             <Height>0.25in</Height>
             <Width>0.89584in</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -276,10 +241,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!BranchParameter.Value</Value>
+                    <Value>=Parameters!Branch.Value</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -288,11 +253,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>0.4375in</Top>
+            <Top>0.5625in</Top>
             <Left>1.09948in</Left>
             <Height>0.25in</Height>
-            <Width>1.82292in</Width>
-            <ZIndex>6</ZIndex>
+            <Width>2.64584in</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -312,10 +277,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!FromDateParameter.Value</Value>
+                    <Value>=Parameters!FromDate.Value</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -324,11 +289,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>0.71528in</Top>
-            <Left>1.09948in</Left>
+            <Top>0.5625in</Top>
+            <Left>4.7106in</Left>
             <Height>0.25in</Height>
-            <Width>1.82292in</Width>
-            <ZIndex>7</ZIndex>
+            <Width>1.19792in</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -342,11 +307,11 @@
             </Style>
           </Textbox>
           <Line Name="Line3">
-            <Top>6.79167in</Top>
+            <Top>4.29167in</Top>
             <Left>0.17587in</Left>
             <Height>0in</Height>
             <Width>1.9075in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -354,11 +319,11 @@
             </Style>
           </Line>
           <Line Name="Line1">
-            <Top>6.79167in</Top>
+            <Top>4.29167in</Top>
             <Left>9.35216in</Left>
             <Height>0in</Height>
             <Width>1.9075in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -374,7 +339,7 @@
                   <TextRun>
                     <Value>Prepared by :</Value>
                     <Style>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -384,11 +349,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>6.79167in</Top>
+            <Top>4.29167in</Top>
             <Left>0.17587in</Left>
             <Height>0.25in</Height>
             <Width>1.57292in</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -407,7 +372,7 @@
                   <TextRun>
                     <Value>Seen &amp; Approved by :</Value>
                     <Style>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -417,11 +382,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>6.79167in</Top>
+            <Top>4.29167in</Top>
             <Left>9.35216in</Left>
             <Height>0.25in</Height>
             <Width>1.57292in</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -440,7 +405,7 @@
                   <TextRun>
                     <Value>CURRENCY:</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -449,11 +414,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.4375in</Top>
-            <Left>2.9224in</Left>
+            <Top>0.82639in</Top>
+            <Left>0.17586in</Left>
             <Height>0.25in</Height>
             <Width>0.89584in</Width>
-            <ZIndex>12</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -472,10 +437,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!CurrencyParameter.Value</Value>
+                    <Value>=Parameters!Currency.Value</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -484,11 +449,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>0.4375in</Top>
-            <Left>3.84602in</Left>
+            <Top>0.82639in</Top>
+            <Left>1.09948in</Left>
             <Height>0.25in</Height>
-            <Width>1.63542in</Width>
-            <ZIndex>13</ZIndex>
+            <Width>2.64583in</Width>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -510,7 +475,7 @@
                   <TextRun>
                     <Value>TO DATE:</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -519,11 +484,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.71528in</Top>
-            <Left>2.9224in</Left>
+            <Top>0.82639in</Top>
+            <Left>3.78697in</Left>
             <Height>0.25in</Height>
             <Width>0.89584in</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -542,10 +507,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!ToDateParameter.Value</Value>
+                    <Value>=Parameters!ToDate.Value</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
-                      <FontFamily>Gill Sans MT</FontFamily>
+                      <FontFamily>Segoe UI</FontFamily>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -554,11 +519,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>0.71528in</Top>
-            <Left>3.84602in</Left>
+            <Top>0.82639in</Top>
+            <Left>4.71059in</Left>
             <Height>0.25in</Height>
-            <Width>1.63542in</Width>
-            <ZIndex>15</ZIndex>
+            <Width>1.19792in</Width>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -599,6 +564,7 @@
                                 <TextRun>
                                   <Value>=Fields!class.Value</Value>
                                   <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Blue</Color>
@@ -638,7 +604,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -678,13 +647,17 @@
                                 <TextRun>
                                   <Value xml:space="preserve">   </Value>
                                   <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>=iif(Fields!sub_class.Value="Adjustment for non-operating and non-cash item:" or Fields!sub_class.Value="Add:", "Blue", "Black")</Color>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value>=Fields!sub_class.Value</Value>
                                   <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>=iif(Fields!sub_class.Value="Adjustment for non-operating and non-cash item:" or Fields!sub_class.Value="Add:", "Blue", "Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -700,6 +673,12 @@
                             <RightBorder>
                               <Style>None</Style>
                             </RightBorder>
+                            <BackgroundColor>=Switch(
+	Fields!sub_class.Value ="Cash Generated From Operating Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Flow From Operating Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Provided By Investing Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Provided By Financing Activities", "Gold"
+    )</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -720,8 +699,19 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!amt.Value</Value>
+                                  <Value>=Switch(
+    TRIM(Fields!sub_class.Value)="Net Income", Fields!amt.Value, 
+    TRIM(Fields!sub_class.Value)="Depreciation of Proferty. Plan and Equipment", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash Generated From Operating Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Flow From Operating Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Provided By Investing Activities", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Increase of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash Beginning Of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Cash At End  Of Period", Fields!amt.Value,
+	TRIM(Fields!sub_class.Value)="Net Cash Provided By Financing Activities", Fields!amt.Value
+    )</Value>
                                   <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00;(#,0.00);'-'</Format>
                                   </Style>
@@ -741,6 +731,12 @@
                             <LeftBorder>
                               <Style>None</Style>
                             </LeftBorder>
+                            <BackgroundColor>=Switch(
+	Fields!sub_class.Value ="Cash Generated From Operating Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Flow From Operating Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Provided By Investing Activities", "Gold",
+	Fields!sub_class.Value ="Net Cash Provided By Financing Activities", "Gold"
+    )</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -748,6 +744,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -765,7 +762,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!gl.Value &amp; IIF(Fields!gl_name.Value = "", "", " ~ " &amp; Fields!gl_name.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <ListLevel>1</ListLevel>
@@ -803,6 +802,7 @@
                                 <TextRun>
                                   <Value>=IIF(IsNothing(Fields!amt.Value),0,Fields!amt.Value)</Value>
                                   <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <Format>#,0.00;(#,0.00);'-'</Format>
                                   </Style>
                                 </TextRun>
@@ -894,19 +894,53 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>CashFlowDS</DataSetName>
-            <Top>1.61854in</Top>
+            <Top>2.11854in</Top>
             <Left>0.17587in</Left>
             <Height>0.78125in</Height>
             <Width>11.08379in</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="CompanyName">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!CompanyName.Value</Value>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>CompanyName</rd:DefaultName>
+            <Top>0.09127in</Top>
+            <Left>0.17587in</Left>
+            <Height>0.29068in</Height>
+            <Width>5.73265in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>8.27in</Height>
+        <Height>4.71271in</Height>
         <Style />
       </Body>
       <Width>11.40875in</Width>
@@ -924,47 +958,71 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="BranchParameter">
+    <ReportParameter Name="Branch">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BRANCH: </Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Currency">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>2</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CURRENCY: </Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FromDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="CurrencyParameter">
+    <ReportParameter Name="ToDate">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="FromDateParameter">
+    <ReportParameter Name="CompanyName">
       <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="ToDateParameter">
-      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>4</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>BranchParameter</ParameterName>
+          <ParameterName>Branch</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>CurrencyParameter</ParameterName>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Currency</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>FromDateParameter</ParameterName>
+          <RowIndex>2</RowIndex>
+          <ParameterName>FromDate</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>ToDateParameter</ParameterName>
+          <RowIndex>2</RowIndex>
+          <ParameterName>ToDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>CompanyName</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

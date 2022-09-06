@@ -187,7 +187,7 @@ namespace Report.Utils
             }
             else
             {
-                if (urlPath.ToLower() == "/Dashboard" || urlPath == "")
+                if (urlPath.ToLower() == "/dashboard" || urlPath == "")
                 {
                     return;
                 }
@@ -222,6 +222,7 @@ namespace Report.Utils
                         }
                         else
                         {
+                            HttpContext.Current.Session["userID"] = null;
                             HttpContext.Current.Response.Redirect("~/Login");
                         }
                     }
@@ -358,15 +359,29 @@ namespace Report.Utils
         {
             if (HttpContext.Current.Session["system_date"] != null)
             {
+                return Convert.ToDateTime(HttpContext.Current.Session["system_date"].ToString());
+            }
+            else
+            {
+                DBConnect db = new DBConnect();
+                var res = db.GetSystemDate();
+                return Convert.ToDateTime(res);
+            }
+        }
+
+        public static string getSystemDateTextbox()
+        {
+            if (HttpContext.Current.Session["system_date"] != null)
+            {
                 DateTime sysDate = Convert.ToDateTime(HttpContext.Current.Session["system_date"].ToString());
-                return sysDate;
+                return sysDate.ToString("dd/MM/yyyy");
             }
             else
             {
                 DBConnect db = new DBConnect();
                 var res = db.GetSystemDate();
                 DateTime sysDate = Convert.ToDateTime(res);
-                return sysDate;
+                return sysDate.ToString("dd/MM/yyyy");
             }
         }
 
@@ -409,7 +424,7 @@ namespace Report.Utils
         }
 
         //Populate Branch List To Dropdown List Statement
-        public static void populateBranchDDL(DropDownList ddl, Int32 token)
+        public static void populateBranchDDL(DropDownList ddl, Int32 token, bool isAllBranch = false)
         {
             var branchList = getBranch(token);
             ddl.DataTextField = "branch_name";
@@ -419,6 +434,10 @@ namespace Report.Utils
             if (branchList.Count > 1)
             {
                 ddl.Items.Insert(0, new ListItem("--- Select a Value ---", ""));
+            }
+            if (isAllBranch)
+            {
+                ddl.Items.Insert(1, new ListItem("All Branches", "0"));
             }
         }
 
@@ -430,7 +449,11 @@ namespace Report.Utils
             ddl.DataValueField = "id";
             ddl.DataSource = branchList;
             ddl.DataBind();
-            ddl.Items.Insert(0, new ListItem("   ALL   ", "ALL"));
+            if (branchList.Count > 1)
+            {
+                ddl.Items.Insert(0, new ListItem("-- ALL --", "ALL"));
+            }
+           
         }
 
         //Populate Transaction Type List To Dropdown List Statement
@@ -442,7 +465,7 @@ namespace Report.Utils
             ddl.DataValueField = "id";
             ddl.DataSource = transactionTypeList;
             ddl.DataBind();
-            ddl.Items.Insert(0, new ListItem("--- Select a Value ---", ""));
+            ddl.Items.Insert(0, new ListItem("--- All ---", "0"));
             ddl.SelectedIndex = 0;
         }
 
@@ -495,6 +518,8 @@ namespace Report.Utils
             reportViewer.SizeToReportContent = true;
             reportViewer.LocalReport.ReportPath = HttpContext.Current.Server.MapPath(String.Format("~/Accounting/{0}.rdlc", reportName));
             reportViewer.LocalReport.DataSources.Clear();
+            //Add Default Parameter CompanyName
+            reportParameterCollection.Add(new ReportParameter("CompanyName", DataHelper.getCompanyName()));
             reportViewer.LocalReport.SetParameters(reportParameterCollection);
 
             foreach (var item in reportDataSources)

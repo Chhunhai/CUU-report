@@ -111,7 +111,7 @@ namespace Report.Utils
         //Get Currency Statement
         public List<Currency> GetCurrency()
         {
-            string query = "SELECT id,currency,currency_label FROM currency";
+            string query = "SELECT id,currency,currency_label FROM currency WHERE currency_status=True;";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -239,7 +239,7 @@ namespace Report.Utils
         //Get Officer Statement
         public List<Officer> GetOfficerNames(int branch_id)
         {
-            string query = "SELECT id, name FROM staff_info WHERE branch_id =" + branch_id;
+            string query = "SELECT id, name FROM staff_info WHERE b_status=1 and branch_id =" + branch_id;
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();

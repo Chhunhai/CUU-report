@@ -1,5 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
+  font-family: "Segoe UI","Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 /* Wrapping element */
@@ -35,4 +36,25 @@ textarea {
 
 .no-margin .form-group {
     margin-bottom: 0 !important;
+}
+
+input:disabled {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 120px;
+    float: left;
+}
+.input-inline {
+    max-width: 120px;
+    width: 100%;
+    float: left;
+}
+.dashboard-title {
+    margin-top: 32px;
+    color: #ffb536;
+    font-weight: bold;
+    text-decoration: underline;
 }
